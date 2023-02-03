@@ -118,7 +118,7 @@ class Entity(Object):
         super().__init__(x, y, width, height, None)
         self.speed = speed
 
-        self.tileset = load_tileset(tileset, 16, 16)
+        self.tileset = load_tileset(tileset,32, 32)
         self.direction = 0
         self.flipX = False
         self.frame = 0
@@ -165,7 +165,7 @@ class Entity(Object):
         self.y += self.velocity[1] * self.speed
         self.draw()
 
-@dataclass
+
 class Player(Entity):
     def __init__(self, x, y, width, height, tileset, speed):
         super().__init__(x, y, width, height, tileset, speed)
@@ -213,9 +213,10 @@ scroll = Position()
 
 
 #Objects
-player = Player(400 - scroll.x, 400 - scroll.y, 75, 75, "assets/player-Sheet.png", 5)
-enemy = Enemy(200, 200, 75, 75, "assets/enemy-Sheet.png", 2)
+player = Player(400 - scroll.x, 400 - scroll.y, 70, 70, "assets/monstro5.png", 5)
+enemy = Enemy(200, 200, 200, 200, "assets/monstro5.png", 2)
 school = School(100,100, 75, 75, "assets/protagonista.png", 1)
+
 while True :
     
     tela.fill((0,0,0))
